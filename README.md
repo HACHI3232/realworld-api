@@ -1,25 +1,28 @@
-# README
+# Conduit - RealWorldプロジェクト
+Conduitは、Medium.comのクローンサイトであり、RealWorldプロジェクトの一環として開発されました。本プロジェクトでは、Railsを使用してConduitと同じ外観と機能を持つサイトを実装しています。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Conduit](https://demo.realworld.io/#/)は、本番レベルのWebアプリケーションを構築する際の一般的な技術、パターン、実践的なアプローチを示すために設計されています。
 
-Things you may want to cover:
+[RealWorld公式サイト
+](https://realworld-docs.netlify.app/)
 
-* Ruby version
 
-* System dependencies
+## 技術スタック
+* バックエンド: Ruby on Rails(APIモード)
+* データベース: sqlite3
 
-* Configuration
 
-* Database creation
+## 実装済み機能
+* 記事の作成、特定の記事の閲覧、編集、削除
 
-* Database initialization
+## 未実装機能
+* 記事へのコメント
+* ユーザーと記事のフォロー機能
+* タグによる記事のフィルタリング
+* ユーザー認証
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
 
-* Deployment instructions
-
-* ...
-# realworld-api
+* ruby 2.7.0
+* Rails 7.1.3
