@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.7.0"
+ruby "2.7.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
@@ -45,3 +45,7 @@ group :development do
   # gem "spring"
 end
 
+group :production do
+  gem 'mysql2', '~> 0.5'
+  gem 'unicorn'
+ end
