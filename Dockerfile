@@ -2,7 +2,13 @@
 FROM ruby:3.3.0
 
 # 必要なパッケージをインストール
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apt-get update -qq \
+    && apt-get install -y nodejs default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
 
 # 作業ディレクトリを設定
 WORKDIR /app
@@ -16,9 +22,10 @@ RUN bundle install
 
 # 現在のディレクトリの残りのファイルをコピー
 COPY . /app
+RUN chmod +x /app/entrypoint.sh
 
 # コンテナがリッスンするポート番号を指定
 EXPOSE 3000
 
 # データベースの設定とRailsサーバーの起動
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["./entrypoint.sh"]
