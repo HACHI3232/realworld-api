@@ -20,12 +20,25 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
-production:
-  <<: *default
+# production:
+#   <<: *default
+#   adapter: mysql2
+#   database: realworld-api_production
+#   username: root
+#   password: <%= ENV['DATABASE_PASSWORD'] %>
+#   socket: /var/lib/mysql/mysql.sock
+#   encoding: utf8mb4
+#   charset: utf8mb4
+
+
+  production:
+     <<: *default
   adapter: mysql2
-  database: realworld-api_production
+  encoding: utf8mb4
+  charset: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
-  encoding: utf8mb4
-  charset: utf8mb4
+  host: realworld-api-217-web.cxqykcy8u0vh.ap-northeast-1.rds.amazonaws.com
+  database: realworld_api_production
