@@ -1,31 +1,20 @@
-# Rubyのバージョンを指定
 FROM ruby:3.3.0
 
-# 必要なパッケージをインストール
-RUN apt-get update -qq \
-    && apt-get install -y nodejs default-mysql-client \
-    && rm -rf /var/lib/apt/lists/*
+# 必要なパッケージのインストール
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 
-# 作業ディレクトリを設定
+# ワーキングディレクトリの設定
 WORKDIR /app
 
-
-# 作業ディレクトリを設定
-WORKDIR /app
-
-# 現在のディレクトリのGemfileとGemfile.lockをコピー
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
-
-# Gemをインストール
+# GemfileとGemfile.lockをコピーしてGemのインストール
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
 
-# 現在のディレクトリの残りのファイルをコピー
-COPY . /app
-RUN chmod +x /app/entrypoint.sh
+# アプリケーションのファイルをコピー
+COPY . .
 
-# コンテナがリッスンするポート番号を指定
+# ポートのエクスポート
 EXPOSE 3000
 
-# データベースの設定とRailsサーバーの起動
-CMD ["./entrypoint.sh"]
+# Railsサーバーの起動
+CMD ["rails", "server", "-b", "0.0.0.0"]
