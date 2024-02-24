@@ -47,7 +47,8 @@ group :development do
 end
 
 group :production do
+  gem 'mysql2', '~> 0.5'
   gem 'unicorn'
 end
 
-gem 'mysql2', '>= 0.4.4'
+gem 'mysql2', '~> 0.5'
