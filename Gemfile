@@ -49,3 +49,5 @@ end
 group :production do
   gem 'unicorn'
 end
+
+gem 'mysql2'
