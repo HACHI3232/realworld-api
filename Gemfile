@@ -50,4 +50,4 @@ group :production do
   gem 'unicorn'
 end
 
-gem 'mysql2', '>= 0.4.4'
+gem 'mysql2'
