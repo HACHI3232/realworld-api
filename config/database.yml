@@ -59,4 +59,4 @@ production:
   <<: *default
   database: realworld_api_production
   username: realworld_api
-  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
+  password: password
