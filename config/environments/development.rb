@@ -71,5 +71,6 @@ Rails.application.configure do
   config.hosts << "unicorn"
   config.hosts << "www.aws-hachi.net"
   config.hosts << "aws-hachi.net"
+  config.force_ssl = true
 
 end

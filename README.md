@@ -26,3 +26,9 @@ Conduitは、Medium.comのクローンサイトであり、RealWorldプロジェ
 
 * ruby 2.7.0
 * Rails 7.1.3
+
+[URL](https://www.aws-hachi.net/articles)
+
+アーキテクチャ
+
+![SCR-20240227-daay](https://github.com/HACHI3232/realworld-api/assets/124450112/2e6104b0-5bf0-46d1-a41b-9d25a4eda558)
