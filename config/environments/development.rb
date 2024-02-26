@@ -70,4 +70,6 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
   config.hosts << "unicorn"
   config.hosts << "www.aws-hachi.net"
+  config.hosts << "aws-hachi.net"
+
 end
